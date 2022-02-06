@@ -26,7 +26,7 @@ inputs = {
   instance_type          = "t2.micro"
   monitoring             = false
   vpc_security_group_ids = ["sg-31d90649"]
-  subnet_id              = "subnet-722cf358"
+  subnet_id              = "vpc-4f1e392b"
 
   tags = {
     Terraform   = "true"
