@@ -4,7 +4,7 @@
 # Note the extra `/` after the protocol is required for the shorthand
 # notation.
 terraform {
-  source = "tfr:///terraform-aws-modules/ecs/aws?version=3.4.1"
+  source = "tfr:///terraform-aws-modules/ec2-instance/aws?version=3.4.0"
 }
 
 # Indicate what region to deploy the resources into
