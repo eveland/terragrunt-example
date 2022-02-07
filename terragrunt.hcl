@@ -4,7 +4,7 @@
 # Note the extra `/` after the protocol is required for the shorthand
 # notation.
 terraform {
-  source = "tfr:///terraform-aws-modules/ec2-instance/aws?version=3.4.0"
+  source = "tfr:///terraform-aws-modules/key-pair/aws?version=1.0.1"
 }
 
 # Indicate what region to deploy the resources into
@@ -20,14 +20,8 @@ EOF
 
 # Indicate the input values to use for the variables of the module.
 inputs = {
-  name = "single-instance"
-
-  ami                    = "ami-03248a0341eadb1f1"
-  instance_type          = "t2.micro"
-  monitoring             = false
-  vpc_security_group_ids = ["sg-31d90649"]
-  subnet_id              = "subnet-722cf358"
-
+  key_name   = "tg-key"
+  public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCjq8CvaSDr2FmPrk0GIqIIJGgUrLBnkxeCjMUpQNLf0luYfhXsAYDlxYOpM1QX5mFOQ/Et+WFvGcjDdcm59Rm0H4wCShmzcye0FnCBpAjlRohzYc8+byx2jZHU/g/b0SOGsSN3Dhyw+X9QpuPtrvYmw2ZZcqyNdQp0YZDbtOBeaei2GDwgbyghNeobYr4/oLlLG3QzbAhrb0D6hBOGF31nEddbJuyu8iFRhMpIXjjrFzhev8tyRDoRVDydDNdHhv5MRkn/yEFVLnUOVLca40DyaCkN1sViNo++vCh0QyIQuRDro2Es3t/OrnbgNT7V+KpUTJJt8IYV/8zRnziYdn9eT8O3iMY5Lk2QHfDq4F8DZWHNnxzdKe6uStj7d2eTyXwwW8GrckaceqA61Yf0s1YbjlzrHGgKTZWXJqcwYCF1HPfxR6sGewpoY2DmGIl05oOsmfQC/DmBspBSqiC+gmqYeMcsKOETVSRnKMAtRITD5fSITq0DT8K1vXOunVRjxnlXIKFRbBjK3Spled528QTxm/mMbAKqB70AJCTKqnpdzkjAmGob+nWpxKBd42g1PgGItvKi4oIKwkO53Fbekh7S6mQ+5cgIkLwNYLbOQr0X4TcC8meVF9D2XmIh7SrXjxcK2VqXnsiuHWFN13UIWWmW2gY5BNH2KNhjDpYrrp/btw== your_email@example.com"
   tags = {
     Terraform   = "true"
     Environment = "dev"
